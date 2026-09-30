@@ -1,0 +1,28 @@
+[project]
+name = "inspect-case-bench"
+version = "0.1.0"
+description = "CASE-Bench context-aware safety evaluation for Inspect AI"
+readme = "README.md"
+requires-python = ">=3.10"
+dependencies = [
+    "inspect_ai>=0.3.100",
+    "httpx>=0.27",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=8.0",
+    "inspect_evals",
+]
+hf = [
+    "accelerate>=1.15.0",
+    "torch>=2.14.1",
+    "transformers>=5.18.0",
+]
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/inspect_case_bench"]
